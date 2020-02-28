@@ -1,0 +1,19 @@
+header {
+  height: 420px;
+  width: 100%;
+  text-align: center;
+  background-color: rebeccapurple;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+}
+
+header img {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+
+div h2 {
+  position: unset;
+  margin: 0 auto;
+}

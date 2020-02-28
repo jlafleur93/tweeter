@@ -5,21 +5,62 @@
  */
 html {
   box-sizing: border-box;
+  font-family: bunge;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
-
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  font-face: 'Bungee', sans-serif;
+}
+.container {
+  background-color: royalblue;
+}
+main {
+  margin: 0 auto;
+  height: 250px;
+  width: 90%;
+  display: block;
+  background-color: rebeccapurple;
+  text-align: center;
+}
+textarea {
+  border: none;
+  border-bottom: 3px solid black;
+  height: 15px;
+  width: 40%;
+  padding-bottom: 20px;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
 
+#tweet-border {
+  display: inline-block;
+  position: relative;
+  border-style: none;
+}
+
+article {
+  background-color: lawngreen;
+  grid-area: auto;
+  margin: 15px;
+}
+
+.counter {
+  position: relative;
+}
+.tweet-content:hover {
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
+ TRUE
  */
