@@ -1,11 +1,18 @@
 .new-tweet {
-  position: absolute;
-  margin: 0 auto;
   text-align: center;
+  display: none;
+  background-color: rebeccapurple;
+  width: 100%;
 }
 h2 form {
   text-align: center;
 }
 section .new-tweet {
   text-align: center;
+}
+.error-msg {
+  background-color: red;
+}
+.write-tweet {
+  cursor: pointer;
 }

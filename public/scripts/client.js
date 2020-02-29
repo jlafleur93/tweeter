@@ -6,12 +6,13 @@
 $(document).ready(function() {
   $('#tweet-submit').submit(function(event) {
     event.preventDefault();
+    $('.error-msg').slideUp(300);
     let textBox = $('#tweet-text').val().length;
     if (textBox < 1 || textBox === null) {
-      alert('sup');
+      $('.error-msg').text('nice try').slideDown(300);
     }
     if (textBox > 140) {
-      alert('your text is too long, shorten it. Just like your life :)');
+      $('.error-msg').text('your text is too long, shorten it. Just like your life :)').slideDown(300);
     } else {
       let postMSG = $('#tweet-submit');
       $.ajax({
@@ -27,7 +28,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweetRender = createdTweetElement(tweet);
-      $('.tweet-container').append($tweetRender);
+      $('.tweet-container').prepend($tweetRender);
     }
   };
 
@@ -37,6 +38,7 @@ $(document).ready(function() {
       .append($('<header>').text(data.user.name))
       .append($('<p>').text(data.content.text))
       .append($('<h2>').text(data.created_at))
+      .append($('<aside>').addClass('handle').text(data.user.handle))
       .append($('<footer>').append($(`<img src=${data.user.avatars}>`)));
     return $tweeterData;
   };
@@ -50,11 +52,12 @@ $(document).ready(function() {
   };
   getTweets();
 
-  $('.new-tweet').hide();
+  $(`#write-tweet`).click(function() {
+    $(`.new-tweet`).slideToggle(300).focus();
+  });
+
   $('.write-tweet').click(function() {
-    $('.new-tweet').slideDown('slow', function() {
-      console.log('sup');
-    });
+    $('.new-tweet').slideDown('slow', function() {});
   });
 });
 //almost done :)
