@@ -19,14 +19,12 @@ html {
 body {
   font-face: 'Bungee', sans-serif;
 }
-.container {
-  background-color: royalblue;
-}
+
 main {
   margin: 0 auto;
   height: 250px;
   width: 90%;
-  display: block;
+  display: contents;
   background-color: rebeccapurple;
   text-align: center;
 }
@@ -48,8 +46,7 @@ textarea {
 }
 
 article {
-  background-color: lawngreen;
-  grid-area: auto;
+  background-color: rebeccapurple;
   margin: 15px;
 }
 
