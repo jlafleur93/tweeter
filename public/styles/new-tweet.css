@@ -14,5 +14,6 @@ section .new-tweet {
   background-color: red;
 }
 .write-tweet {
+  display: block;
   cursor: pointer;
 }

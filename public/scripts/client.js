@@ -35,18 +35,48 @@ $(document).ready(function() {
   const createdTweetElement = function(data) {
     const $tweeterData = $('<article>')
       .addClass('tweet')
-      .append($('<header>').text(data.user.name))
-      .append($('<p>').text(data.content.text))
-      .append($('<h2>').text(data.created_at))
-      .append($('<aside>').addClass('handle').text(data.user.handle))
-      .append($('<footer>').append($(`<img src=${data.user.avatars}>`)));
+      .append(
+        $('<header>')
+          .append($(`<img src=${data.user.avatars}>`))
+          .append($('<h1>').text(data.user.name))
+          .append($('<p>').text(data.content.text))
+          .append($('<aside>').addClass('handle').text(data.user.handle))
+          .append(
+            $('<footer>')
+              .text(getTime(data.created_at))
+              .append($(`<img src=https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
+              .append($(`<img src=https://puu.sh/FfXs1/5efa56dd79.png>`).addClass('retweet'))
+              .append($(`<img src=https://puu.sh/FfXvp/785b6844bb.png>`).addClass('flag')),
+          ),
+      );
+
     return $tweeterData;
+  };
+  let getTime = function(timestamp) {
+    let currentTime = Date.now();
+    let min = 1000 * 60;
+    let hour = min * 60;
+    let day = hour * 24;
+    let month = day * 30;
+    let year = month * 365;
+    let timeDiff = timestamp - currentTime;
+    if (timeDiff < min) {
+      return 'posted just now.';
+    } else if (timeDiff < hour) {
+      return Math.floor(timeDiff / min) + ' Minutes Ago';
+    } else if (timeDiff < day) {
+      return Math.floor(timeDiff / hour) + ' Hours Ago';
+    } else if (timeDiff < month) {
+      return Math.floor(timeDiff / day) + ' Days Ago';
+    } else if (timeDiff < year) {
+      return Math.floor(timeDiff / month) + ' Months Ago';
+    } else {
+      return Math.floor(timeDiff / year) + ' Years ago';
+    }
   };
 
   const getTweets = function() {
-    console.log(`testing gettweets`);
     $.ajax('/tweets', { method: 'GET' }).then((data) => {
-      console.log(`data in getTweets`, data);
       renderTweets(data);
     });
   };
@@ -60,4 +90,3 @@ $(document).ready(function() {
     $('.new-tweet').slideDown('slow', function() {});
   });
 });
-//almost done :)
