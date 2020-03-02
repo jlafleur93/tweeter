@@ -37,14 +37,14 @@ $(document).ready(function() {
       .addClass('tweet')
       .append(
         $('<header>')
-          .append($(`<img src=${data.user.avatars}>`))
-          .append($('<h1>').text(data.user.name))
-          .append($('<p>').text(data.content.text))
+          .append($(`<img src=${data.user.avatars}>`).addClass('avatar'))
+          .append($('<h1>').text(data.user.name).addClass('username'))
+          .append($('<p>').text(data.content.text).addClass('tweet-content'))
           .append($('<aside>').addClass('handle').text(data.user.handle))
           .append(
             $('<footer>')
               .text(getTime(data.created_at))
-              .append($(`<img src=https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
+              .append($(`<img src= https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
               .append($(`<img src=https://puu.sh/FfXs1/5efa56dd79.png>`).addClass('retweet'))
               .append($(`<img src=https://puu.sh/FfXvp/785b6844bb.png>`).addClass('flag')),
           ),

@@ -60,11 +60,32 @@ article {
 .handle {
   opacity: 0;
 }
-.handle:hover {
+.handle:hover,
+.like:hover,
+.retweet:hover,
+.flag:hover {
   opacity: 1;
 }
 article:hover {
   box-shadow: 5px 5px 5px red;
+}
+.retweet,
+.flag,
+.like {
+  opacity: 0;
+}
+.tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tweet-content {
+}
+.username {
+}
+.avatar {
+  float: left;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
