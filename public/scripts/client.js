@@ -78,6 +78,14 @@ $(document).ready(function() {
       return 'Posted ' + Math.floor(timeDiff / year) + ' Years ago.';
     }
   };
+  $('.tweet').hover(
+    function() {
+      $('.flag').show();
+    },
+    function() {
+      $('.flag').hide();
+    },
+  );
 
   const getTweets = function() {
     $.ajax('/tweets', { method: 'GET' }).then((data) => {

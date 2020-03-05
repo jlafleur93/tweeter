@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 *,
 *:before,
@@ -58,11 +59,11 @@ article {
 .handle {
   opacity: 0;
 }
-.handle:hover,
-.like:hover,
-.retweet:hover,
-.flag:hover {
-  opacity: 1;
+.handle,
+.like,
+.retweet,
+.flag {
+  opacity: 0;
 }
 article:hover {
   border: solid 2px black;
@@ -70,6 +71,12 @@ article:hover {
   box-shadow: 6px 6px;
 }
 
+article:hover .handle,
+.like,
+.retweet,
+.flag {
+  opacity: 1;
+}
 .tweet {
   display: flex;
   flex-direction: column;
@@ -77,6 +84,7 @@ article:hover {
   font-family: 'Source Sans Pro';
   border: 2.5px black solid;
   border-radius: 5px;
+  margin-left: 3%;
 }
 
 .tweet-content {
@@ -100,5 +108,31 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
 }
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+.new-tweet h2 {
+  margin-left: 2%;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  main {
+    background-color: #3e55a1;
+  }
+  .tweet-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 9.2%;
+  }
+  .new-tweet {
+    margin-top: 9.2%;
+    margin-right: 3%;
+  }
+  .tweet-submit {
+  }
+  .tweet-header {
+    margin-left: -57px;
+  }
+  .date {
+    display: contents;
+  }
 }

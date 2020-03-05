@@ -39,9 +39,27 @@ header footer {
 .flag {
   height: 1.2em;
   float: right;
+  opacity: 0;
 }
 .date {
-  padding-right: 32.4em;
+  padding-right: 37%;
 
   margin-right: 41%;
+}
+article:hover .handle {
+  opacity: 1;
+}
+
+article:hover .retweet {
+  opacity: 1;
+}
+article:hover .like {
+  opacity: 1;
+}
+article:hover .flag {
+  opacity: 1;
+}
+.tweet-content {
+  font-family: 'Source Sans Pro', 'Times New Roman', Times, serif;
+  font-size: 20px;
 }
