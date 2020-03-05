@@ -5,7 +5,6 @@
  */
 html {
   box-sizing: border-box;
-  font-family: bunge;
 }
 *,
 *:before,
@@ -17,7 +16,8 @@ html {
  * Global layout stuff
  */
 body {
-  font-face: 'Bungee', sans-serif;
+  font-face: 'Source Sans Pro', sans-serif;
+  background-color: #3e55a1;
 }
 
 main {
@@ -31,9 +31,7 @@ main {
 textarea {
   border: none;
   border-bottom: 3px solid black;
-  height: 15px;
   width: 40%;
-  padding-bottom: 20px;
   background-color: transparent;
   resize: none;
   outline: none;
@@ -67,17 +65,18 @@ article {
   opacity: 1;
 }
 article:hover {
-  box-shadow: 5px 5px 5px red;
+  border: solid 2px black;
+  opacity: 1;
+  box-shadow: 6px 6px;
 }
-.retweet,
-.flag,
-.like {
-  opacity: 0;
-}
+
 .tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Source Sans Pro';
+  border: 2.5px black solid;
+  border-radius: 5px;
 }
 
 .tweet-content {
@@ -87,7 +86,19 @@ article:hover {
 .avatar {
   float: left;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- TRUE
- */
+input {
+  font-family: 'Bungee';
+  background-color: rebeccapurple;
+  border: none;
+}
+.counter {
+  font-family: 'Bungee';
+  color: white;
+}
+.submit-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+}

@@ -9,10 +9,14 @@ $(document).ready(function() {
     $('.error-msg').slideUp(300);
     let textBox = $('#tweet-text').val().length;
     if (textBox < 1 || textBox === null) {
-      $('.error-msg').text('nice try').slideDown(300);
+      $('.error-msg').text('nice try').slideDown(300).delay(4000).slideUp();
     }
     if (textBox > 140) {
-      $('.error-msg').text('your text is too long, shorten it. Just like your life :)').slideDown(300);
+      $('.error-msg')
+        .text('your text is too long, shorten it. Just like your life :)')
+        .slideDown(300)
+        .delay(4000)
+        .slideUp();
     } else {
       let postMSG = $('#tweet-submit');
       $.ajax({
@@ -39,12 +43,12 @@ $(document).ready(function() {
         $('<header>')
           .append($(`<img src=${data.user.avatars}>`).addClass('avatar'))
           .append($('<h1>').text(data.user.name).addClass('username'))
-          .append($('<p>').text(data.content.text).addClass('tweet-content'))
           .append($('<aside>').addClass('handle').text(data.user.handle))
+          .append($('<p>').text(data.content.text).addClass('tweet-content'))
           .append(
             $('<footer>')
-              .text(getTime(data.created_at))
-              .append($(`<img src= https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
+              .append($('<aside>').addClass('date').text(getTime(data.created_at)))
+              .append($(`<img src=https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
               .append($(`<img src=https://puu.sh/FfXs1/5efa56dd79.png>`).addClass('retweet'))
               .append($(`<img src=https://puu.sh/FfXvp/785b6844bb.png>`).addClass('flag')),
           ),
@@ -58,20 +62,20 @@ $(document).ready(function() {
     let hour = min * 60;
     let day = hour * 24;
     let month = day * 30;
-    let year = month * 365;
-    let timeDiff = timestamp - currentTime;
+    let year = day * 365;
+    let timeDiff = currentTime - timestamp;
     if (timeDiff < min) {
-      return 'posted just now.';
+      return 'Posted just now.';
     } else if (timeDiff < hour) {
-      return Math.floor(timeDiff / min) + ' Minutes Ago';
+      return 'Posted ' + Math.floor(timeDiff / min) + ' Minutes Ago.';
     } else if (timeDiff < day) {
-      return Math.floor(timeDiff / hour) + ' Hours Ago';
+      return 'Posted ' + Math.floor(timeDiff / hour) + ' Hours Ago.';
     } else if (timeDiff < month) {
-      return Math.floor(timeDiff / day) + ' Days Ago';
+      return 'Posted ' + Math.floor(timeDiff / day) + ' Days Ago.';
     } else if (timeDiff < year) {
-      return Math.floor(timeDiff / month) + ' Months Ago';
+      return 'Posted ' + Math.floor(timeDiff / month) + ' Months Ago.';
     } else {
-      return Math.floor(timeDiff / year) + ' Years ago';
+      return 'Posted ' + Math.floor(timeDiff / year) + ' Years ago.';
     }
   };
 

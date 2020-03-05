@@ -1,8 +1,8 @@
 .new-tweet {
   text-align: center;
   display: none;
-  background-color: rebeccapurple;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
 }
 h2 form {
   text-align: center;
@@ -16,4 +16,32 @@ section .new-tweet {
 .write-tweet {
   display: block;
   cursor: pointer;
+}
+
+.username {
+  float: left;
+  margin-left: 2%;
+  font-size: 1.8rem;
+}
+
+.handle {
+  float: right;
+}
+
+header footer {
+  border-top: 1.5px solid black;
+}
+.avatar {
+  height: 2.9em;
+}
+.like,
+.retweet,
+.flag {
+  height: 1.2em;
+  float: right;
+}
+.date {
+  padding-right: 32.4em;
+
+  margin-right: 41%;
 }
