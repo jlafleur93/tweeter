@@ -71,12 +71,6 @@ article:hover {
   box-shadow: 6px 6px;
 }
 
-article:hover .handle,
-.like,
-.retweet,
-.flag {
-  opacity: 1;
-}
 .tweet {
   display: flex;
   flex-direction: column;
@@ -87,10 +81,6 @@ article:hover .handle,
   margin-left: 3%;
 }
 
-.tweet-content {
-}
-.username {
-}
 .avatar {
   float: left;
 }
@@ -110,6 +100,9 @@ input {
 }
 .new-tweet h2 {
   margin-left: 2%;
+}
+.red-counter {
+  color: red;
 }
 @media only screen and (min-width: 1024px) {
   body {

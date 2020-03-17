@@ -57,13 +57,13 @@ $(document).ready(function() {
     return $tweeterData;
   };
   let getTime = function(timestamp) {
-    let currentTime = Date.now();
-    let min = 1000 * 60;
-    let hour = min * 60;
-    let day = hour * 24;
-    let month = day * 30;
-    let year = day * 365;
-    let timeDiff = currentTime - timestamp;
+    const currentTime = Date.now();
+    const min = 1000 * 60;
+    const hour = min * 60;
+    const day = hour * 24;
+    const month = day * 30;
+    const year = day * 365;
+    const timeDiff = currentTime - timestamp;
     if (timeDiff < min) {
       return 'Posted just now.';
     } else if (timeDiff < hour) {

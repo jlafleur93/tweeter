@@ -5,10 +5,12 @@ $(document).ready(function() {
 const countDown = function() {
   $(`#tweet-text`).on('keyup', function() {
     let count = 140 - this.value.length;
-    console.log(`count check: ${count}`);
     if (count < 0) {
-      $('.counter').css('color', 'red');
+      $('.counter').toggleClass('red-counter', true);
+    } else {
+      $('.counter').toggleClass('red-counter', false);
     }
+
     $('.counter').text(`${count}`);
   });
 };
