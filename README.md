@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+-chance
+-md5
+-moment
+
+!["Screenshot of tweet compose box"](https://puu.sh/Fn67u/2a0de3f157.png)
+!["Screenshot of tweet"](https://puu.sh/Fn67f/0bb16b51f7.png)
