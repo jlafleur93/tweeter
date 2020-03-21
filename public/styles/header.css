@@ -1,15 +1,10 @@
 .tweet-header {
   height: 420px;
-  width: 100%;
+  position: sticky;
+  z-index: 0;
   text-align: center;
   background-color: rebeccapurple;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
-}
-
-header div img {
-  display: block;
-  margin: 0 auto;
-  padding-top: 120px;
 }
 
 div h2 {
@@ -20,4 +15,12 @@ div h2 {
 
 .default-img {
   padding-left: 35px;
+}
+.tweet-bar {
+  display: flex;
+  flex-direction: row;
+}
+div h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
 }

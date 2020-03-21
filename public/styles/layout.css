@@ -17,17 +17,16 @@ html {
  * Global layout stuff
  */
 body {
-  font-face: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #3e55a1;
 }
 
 main {
-  margin: 0 auto;
-  height: 250px;
-  width: 90%;
-  display: contents;
-  background-color: rebeccapurple;
+  display: flex;
   text-align: center;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 }
 textarea {
   border: none;
@@ -52,19 +51,12 @@ article {
 .counter {
   position: relative;
 }
-.tweet-content:hover {
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
-}
+
 .handle {
+  padding-left: 56%;
   opacity: 0;
 }
-.handle,
-.like,
-.retweet,
-.flag {
-  opacity: 0;
-}
+
 article:hover {
   border: solid 2px black;
   opacity: 1;
@@ -72,18 +64,12 @@ article:hover {
 }
 
 .tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Source Sans Pro';
+  text-align: justify;
+  width: 100%;
   border: 2.5px black solid;
   border-radius: 5px;
-  margin-left: 3%;
 }
 
-.avatar {
-  float: left;
-}
 input {
   font-family: 'Bungee';
   background-color: rebeccapurple;
@@ -98,15 +84,14 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
 }
-.new-tweet h2 {
-  margin-left: 2%;
-}
+
 .red-counter {
   color: red;
 }
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
+    flex-direction: column;
   }
   main {
     background-color: #3e55a1;
@@ -114,18 +99,30 @@ input {
   .tweet-container {
     display: flex;
     flex-direction: column;
-    margin-top: 9.2%;
+    margin-left: 626px;
+    justify-content: center;
   }
   .new-tweet {
-    margin-top: 9.2%;
-    margin-right: 3%;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 439px;
   }
   .tweet-submit {
   }
   .tweet-header {
-    margin-left: -57px;
+    width: 50%;
   }
   .date {
     display: contents;
+  }
+  .tweet-bar {
+    width: 36%;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-evenly;
+    z-index: 1;
   }
 }

@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
+    
     <!-- External JS -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- App JS -->
@@ -21,7 +21,7 @@
   
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="tweet-bar">
       <span>tweeter</span>
       <div>
       <span class="write-tweet"><strong>Write</strong> a new tweet.</span>
@@ -37,14 +37,14 @@
       </div>
       <br>  
       <div>
-        <h2>Your Name</h2>
+        <h2><strong>Rick</strong> James</h2>
       </div>
     </header>
     
     
     <!-- Page-specific (main) content here -->
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <h2>Make a Tweet!</h2>
       <form id="tweet-submit"
       method=“POST”
       action=“/tweets/”>
@@ -59,6 +59,7 @@
     <main class="tweet-container">
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
       <script type="text/javascript" src="/scripts/client.js"></script>
         <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>

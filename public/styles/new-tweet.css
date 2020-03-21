@@ -1,8 +1,9 @@
 .new-tweet {
   text-align: center;
-  display: none;
+  display: flex;
   width: 90%;
   margin-left: 5%;
+  flex-direction: column;
 }
 h2 form {
   text-align: center;
@@ -11,28 +12,34 @@ section .new-tweet {
   text-align: center;
 }
 .error-msg {
-  background-color: red;
+  background-color: rebeccapurple;
+  width: 20%;
+  margin: 0 auto;
+  font-family: 'Bungee', sans-serif;
+  color: red;
 }
 .write-tweet {
+  font-family: 'Source Sans Pro', sans-serif;
   display: block;
   cursor: pointer;
 }
 
 .username {
-  float: left;
-  margin-left: 2%;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  color: white;
 }
 
 .handle {
-  float: right;
+  margin: 0 auto;
+  color: white;
 }
 
 header footer {
   border-top: 1.5px solid black;
 }
 .avatar {
-  height: 2.9em;
+  width: 10%;
+  background-color: black;
 }
 .like,
 .retweet,
@@ -49,17 +56,34 @@ header footer {
 article:hover .handle {
   opacity: 1;
 }
-
-article:hover .retweet {
+article:hover .like {
   opacity: 1;
 }
-article:hover .like {
+article:hover .retweet {
   opacity: 1;
 }
 article:hover .flag {
   opacity: 1;
 }
+
 .tweet-content {
   font-family: 'Source Sans Pro', 'Times New Roman', Times, serif;
   font-size: 20px;
+  color: white;
+  display: inline-table;
+}
+.tweet > header {
+  display: flex;
+  flex-direction: column;
+}
+.user-info {
+  display: flex;
+  height: 10vh;
+}
+.tweet-text {
+  text-align: justify;
+}
+.new-tweet h2 {
+  color: black;
+  font-family: 'Bungee', sans-serif;
 }

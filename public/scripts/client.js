@@ -37,55 +37,28 @@ $(document).ready(function() {
   };
 
   const createdTweetElement = function(data) {
-    const $tweeterData = $('<article>')
-      .addClass('tweet')
-      .append(
-        $('<header>')
-          .append($(`<img src=${data.user.avatars}>`).addClass('avatar'))
-          .append($('<h1>').text(data.user.name).addClass('username'))
-          .append($('<aside>').addClass('handle').text(data.user.handle))
-          .append($('<p>').text(data.content.text).addClass('tweet-content'))
-          .append(
-            $('<footer>')
-              .append($('<aside>').addClass('date').text(getTime(data.created_at)))
-              .append($(`<img src=https://puu.sh/FfXfE/29ec5b3350.png>`).addClass('like'))
-              .append($(`<img src=https://puu.sh/FfXs1/5efa56dd79.png>`).addClass('retweet'))
-              .append($(`<img src=https://puu.sh/FfXvp/785b6844bb.png>`).addClass('flag')),
-          ),
-      );
-
+    let time = moment(data.created_at).fromNow();
+    let $tweeterData = ` 
+    <article class='tweet'>
+                  <header>
+                  <div class="user-info">
+                    <img class="avatar" src=${data.user.avatars}/>
+                     <h1 class='username'> ${data.user.name} </h1>
+                     <aside class='handle'> ${data.user.handle} </aside>
+                     </div>
+                     <div class='tweet-text'>
+                     <p class='tweet-content'> ${data.content.text} </p>
+                     </div>
+                     <footer>
+                      <aside class='date'>${time} </aside>
+                      <img class='like' src=https://puu.sh/FfXfE/29ec5b3350.png/>
+                      <img class='retweet' src=https://puu.sh/FfXs1/5efa56dd79.png/>
+                      <img class='flag' src=https://puu.sh/FfXvp/785b6844bb.png/>
+                     </footer>
+                </header>
+                </article>`;
     return $tweeterData;
   };
-  let getTime = function(timestamp) {
-    const currentTime = Date.now();
-    const min = 1000 * 60;
-    const hour = min * 60;
-    const day = hour * 24;
-    const month = day * 30;
-    const year = day * 365;
-    const timeDiff = currentTime - timestamp;
-    if (timeDiff < min) {
-      return 'Posted just now.';
-    } else if (timeDiff < hour) {
-      return 'Posted ' + Math.floor(timeDiff / min) + ' Minutes Ago.';
-    } else if (timeDiff < day) {
-      return 'Posted ' + Math.floor(timeDiff / hour) + ' Hours Ago.';
-    } else if (timeDiff < month) {
-      return 'Posted ' + Math.floor(timeDiff / day) + ' Days Ago.';
-    } else if (timeDiff < year) {
-      return 'Posted ' + Math.floor(timeDiff / month) + ' Months Ago.';
-    } else {
-      return 'Posted ' + Math.floor(timeDiff / year) + ' Years ago.';
-    }
-  };
-  $('.tweet').hover(
-    function() {
-      $('.flag').show();
-    },
-    function() {
-      $('.flag').hide();
-    },
-  );
 
   const getTweets = function() {
     $.ajax('/tweets', { method: 'GET' }).then((data) => {
@@ -94,11 +67,7 @@ $(document).ready(function() {
   };
   getTweets();
 
-  $(`#write-tweet`).click(function() {
-    $(`.new-tweet`).slideToggle(300).focus();
-  });
-
-  $('.write-tweet').click(function() {
-    $('.new-tweet').slideDown('slow', function() {});
+  $(`.write-tweet`).click(function() {
+    $(`#tweet-text`).focus();
   });
 });
