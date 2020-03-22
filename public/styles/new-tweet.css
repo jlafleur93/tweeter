@@ -1,8 +1,9 @@
 .new-tweet {
   text-align: center;
   display: none;
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
+  max-width: 100%;
+
   flex-direction: column;
 }
 h2 form {
@@ -27,6 +28,8 @@ section .new-tweet {
 .username {
   font-size: 1.3rem;
   color: white;
+  padding-left: 1%;
+  max-width: 10%;
 }
 
 .handle {
@@ -38,15 +41,15 @@ header footer {
   border-top: 1.5px solid black;
 }
 .avatar {
-  width: 10%;
+  max-width: 10%;
   background-color: black;
 }
 .like,
 .retweet,
 .flag {
-  height: 1.2em;
-  float: right;
+  max-width: 2%;
   opacity: 0;
+  float: right;
 }
 .date {
   padding-right: 37%;
@@ -75,13 +78,15 @@ article:hover .flag {
 .tweet > header {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 .user-info {
   display: flex;
-  height: 10vh;
+  max-width: 100%;
 }
 .tweet-text {
   text-align: justify;
+  word-wrap: break-word;
 }
 .new-tweet h2 {
   color: black;

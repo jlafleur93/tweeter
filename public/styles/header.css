@@ -18,7 +18,9 @@ div h2 {
 }
 .tweet-bar {
   display: flex;
-  flex-direction: row;
+  padding-right: 16%;
+  position: fixed;
+  z-index: 1;
 }
 div h2 {
   font-family: 'Source Sans Pro', sans-serif;

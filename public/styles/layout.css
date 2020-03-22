@@ -89,27 +89,11 @@ input {
   color: red;
 }
 @media only screen and (min-width: 1024px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
   main {
     background-color: #3e55a1;
+    padding-left: 30%;
   }
-  .tweet-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 626px;
-    justify-content: center;
-  }
-  .new-tweet {
-    flex-direction: column;
-    text-align: center;
-    margin: 0 auto;
-    margin-left: 439px;
-  }
-  .tweet-submit {
-  }
+
   .tweet-header {
     width: 50%;
   }
@@ -118,6 +102,7 @@ input {
   }
   .tweet-bar {
     width: 36%;
+    padding: 0;
     margin-left: 60px;
     display: flex;
     flex-direction: row;
