@@ -70,9 +70,6 @@ $(document).ready(function() {
   getTweets();
   $(`.write-tweet`).click(function() {
     $(`.new-tweet`).slideToggle(300);
-  });
-
-  $(`.write-tweet`).click(function() {
     $(`#tweet-text`).focus();
   });
 });
