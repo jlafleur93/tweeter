@@ -9,22 +9,24 @@ $(document).ready(function() {
     $('.error-msg').slideUp(300);
     let textBox = $('#tweet-text').val().length;
     if (textBox < 1 || textBox === null) {
-      $('.error-msg').text('nice try').slideDown(300).delay(4000).slideUp();
+      $('.error-msg').text('Please submit something of actual value!').slideDown(300).delay(1000).slideUp();
     }
     if (textBox > 140) {
       $('.error-msg')
         .text('your text is too long, shorten it. Just like your life :)')
         .slideDown(300)
-        .delay(4000)
+        .delay(1000)
         .slideUp();
     } else {
-      let postMSG = $('#tweet-submit');
+      const postMSG = $('#tweet-submit');
       $.ajax({
         method: 'POST',
         url: '/tweets/',
         data: postMSG.serialize(),
       }).then(() => {
         getTweets();
+        $('#tweet-text').val('');
+        $('.counter').text(140);
       });
     }
   });
@@ -66,6 +68,9 @@ $(document).ready(function() {
     });
   };
   getTweets();
+  $(`.write-tweet`).click(function() {
+    $(`.new-tweet`).slideToggle(300);
+  });
 
   $(`.write-tweet`).click(function() {
     $(`#tweet-text`).focus();
