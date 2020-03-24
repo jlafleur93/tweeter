@@ -18,7 +18,7 @@ div h2 {
 }
 .tweet-bar {
   display: flex;
-  padding-right: 16%;
+  width: 100%;
   position: fixed;
   z-index: 1;
 }

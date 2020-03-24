@@ -87,6 +87,7 @@ article:hover .flag {
 .tweet-text {
   text-align: justify;
   word-wrap: break-word;
+  margin: 0 20px;
 }
 .new-tweet h2 {
   color: black;
