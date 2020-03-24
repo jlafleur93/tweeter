@@ -32,15 +32,15 @@ $(document).ready(function() {
   });
 
   const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
+    for (const tweet of tweets) {
       const $tweetRender = createdTweetElement(tweet);
       $('.tweet-container').prepend($tweetRender);
     }
   };
 
   const createdTweetElement = function(data) {
-    let time = moment(data.created_at).fromNow();
-    let $tweeterData = ` 
+    const time = moment(data.created_at).fromNow();
+    const $tweeterData = ` 
     <article class='tweet'>
                   <header>
                   <div class="user-info">
