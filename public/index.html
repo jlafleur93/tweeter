@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700,700i&display=swap" rel="stylesheet">
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
-    
-    <!-- External JS -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <!-- App JS -->
-  </head>
-  
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav class="tweet-bar">
-      <span>tweeter</span>
-      <div>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,400,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <!-- External JS -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <!-- App JS -->
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="tweet-bar">
+    <span>tweeter</span>
+    <div>
       <span class="write-tweet"><strong>Write</strong> a new tweet.</span>
       <a href="#" class="arrow down"></a>
-   <div class="container">
-</div>
+      <div class="container">
       </div>
-    </nav>
-    
-    <header class="tweet-header">
-      <div class ="default-img">
-        <img src="/images/profile-hex.png"> 
-      </div>
-      <br>  
-      <div>
-        <h2><strong>Rick</strong> James</h2>
-      </div>
-    </header>
-    
-    
-    <!-- Page-specific (main) content here -->
-    <section class="new-tweet">
-      <h2>Make a Tweet!</h2>
-      <form id="tweet-submit"
-      method=“POST”
-      action=“/tweets/”>
-      <div class ="error-msg"></div>
-        <textarea id="tweet-text"name="text" placeholder="What are you humming about?"></textarea>
-        <div class ="submit-block">
+    </div>
+  </nav>
+
+  <header class="tweet-header">
+    <div class="default-img">
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div>
+      <h2><strong>Rick</strong> James</h2>
+    </div>
+  </header>
+
+
+  <!-- Page-specific (main) content here -->
+  <section class="new-tweet">
+    <h2>Make a Tweet!</h2>
+    <form id="tweet-submit" method=“POST” action=“/tweets/”>
+      <div class="error-msg"></div>
+      <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
+      <div class="submit-block">
         <input type="submit" value="Tweet">
         <span class="counter">140</span>
-        </div>
-      </form>
-    </section>
-    <main class="tweet-container">
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
-      <script type="text/javascript" src="/scripts/client.js"></script>
-        <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </body>
+      </div>
+    </form>
+  </section>
+  <main class="tweet-container">
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</body>
+
 </html>
