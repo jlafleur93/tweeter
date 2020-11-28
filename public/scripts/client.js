@@ -32,14 +32,16 @@ $(document).ready(function() {
   });
 
   const renderTweets = function(tweets) {
+    $('.tweet-container').empty();
     for (const tweet of tweets) {
       const $tweetRender = createdTweetElement(tweet);
       $('.tweet-container').prepend($tweetRender);
     }
   };
+  
 
   const createdTweetElement = function(data) {
-    const time = moment(data.created_at).fromNow();
+
     const $tweeterData = ` 
     <article class='tweet'>
                   <header>
@@ -52,13 +54,14 @@ $(document).ready(function() {
                      <p class='tweet-content'> ${data.content.text} </p>
                      </div>
                      <footer>
-                      <aside class='date'>${time} </aside>
+                      <aside class='date'>${moment(data.created_at).fromNow()} </aside>
                       <img class='like' src=https://puu.sh/FfXfE/29ec5b3350.png/>
                       <img class='retweet' src=https://puu.sh/FfXs1/5efa56dd79.png/>
                       <img class='flag' src=https://puu.sh/FfXvp/785b6844bb.png/>
                      </footer>
                 </header>
                 </article>`;
+
     return $tweeterData;
   };
 
@@ -67,7 +70,8 @@ $(document).ready(function() {
       renderTweets(data);
     });
   };
-  getTweets();
+
+
   $(`.write-tweet`).click(function() {
     $(`.new-tweet`).slideToggle(300);
     $(`#tweet-text`).focus();
