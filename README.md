@@ -18,6 +18,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance
 - Md5
 - Moment
+### Create tweet
 
 !["Screenshot of tweet compose box"](docs/tweeter-writetweet.PNG)
+
+### Screenshot of tweet
 !["Screenshot of tweet"](docs/tweeter-tweet.PNG)
